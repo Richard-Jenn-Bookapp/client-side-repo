@@ -19,6 +19,18 @@ var app = app || {};
             .then(Book.loadAll)
             .then(cb)
             .fail(console.error);
+
+
+    };
+
+    Book.loadAll = (data) => {
+        Book.all = data.map(obj => new Book(obj));
+    };
+
+    Book.prototype.toHtml = function () {
+        let fillTemplate = Handlebars.compile($('#book-template').text());
+        return fillTemplate(this);
+
     };
 
     Book.loadAll = (data) => {
@@ -29,6 +41,7 @@ var app = app || {};
         let fillTemplate = Handlebars.compile($('#book-template').text());
         return fillTemplate(this);
     };
+
 
     module.Book = Book;
 })(app);
