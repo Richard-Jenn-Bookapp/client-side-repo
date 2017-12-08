@@ -9,10 +9,29 @@
         <link rel="stylesheet" href="styles/layout.css">
         <link rel="stylesheet" href="styles/modules.css">
         <link rel="stylesheet" href="styles/reset.css">
+        <script id="book-template" type="text/x-handlebars-template">
+            <article>
+                <h1>{{title}}</h1></a>
+                <h2>{{author}}</h2>
+                <p>{{isbn}}</p>
+                <p>{{description}}</p>
+                <a href="{{img_url}}"></a>
+            </article>
+        </script>
     </head>
     <body>
+        <nav>
+            <ul>
+                <li><a href="/">Books</a></li>
+                <li><a href="/about" id="about">About</a></li>
+                <li><a href="/new" id="new">New</a></li>
+            </ul>
+        </nav>
+        <main>
+
+        </main>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
         <script src="scripts/model/book.js"></script>
-        <script src="scripts/view/bookview.js"></script>
+        <script src="scripts/view/bookView.js"></script>
     </body>
 </html>
