@@ -30,8 +30,7 @@ var app = app || {};
         return fillTemplate(this);
     };
 
-
     module.Book = Book;
 })(app);
 
-app.Book.fetchAll();
+app.Book.fetchAll(app.bookView.initIndexPage);
