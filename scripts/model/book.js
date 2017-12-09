@@ -15,7 +15,6 @@ var app = app || {};
 
     Book.fetchAll = (cb) => {
         $.get('https://pure-cove-37929.herokuapp.com/api/v1/books')
-            .done(console.log) // how is this console logging the dataObj? Cause of the chain? Weird.
             .then(Book.loadAll)
             .then(cb)
             .fail(console.error);
