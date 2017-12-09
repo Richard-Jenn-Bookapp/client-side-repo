@@ -11,11 +11,11 @@
         <link rel="stylesheet" href="styles/reset.css">
         <script id="book-template" type="text/x-handlebars-template">
             <article>
-                <h1>{{title}}</h1></a>
+                <h1><em>{{title}}</em></h1></a>
                 <h2>{{author}}</h2>
                 <p>{{isbn}}</p>
                 <p>{{description}}</p>
-                <a href="{{img_url}}"></a>
+                <img src="{{img_url}}">
             </article>
         </script>
     </head>
@@ -34,7 +34,11 @@
 
         </main>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
         <script src="scripts/model/book.js"></script>
         <script src="scripts/view/bookView.js"></script>
+        <script>
+            app.Book.fetchAll(app.bookView.initIndexPage);
+        </script>
     </body>
 </html>

@@ -45,5 +45,3 @@ var app = app || {};
 
     module.Book = Book;
 })(app);
-
-app.Book.fetchAll(app.bookView.initIndexPage);

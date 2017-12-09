@@ -4,7 +4,7 @@ var app = app || {}; // eslint-disable-line
 
 
 (function (module) {
-    const bookView = {};
+    let bookView = {};
 
     bookView.initIndexPage = () => {
         $('main section').hide();
