@@ -7,7 +7,7 @@ var app = app || {};
         this.author = obj.author;
         this.title = obj.title;
         this.isbn = obj.isbn;
-        this.imageUrl = obj.imageUrl;
+        this.img_url = obj.image_url;
         this.description = obj.description;
     }
 
