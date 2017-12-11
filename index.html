@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="styles/reset.css">
         <script id="book-template" type="text/x-handlebars-template">
             <article>
-                <a href="/books/{{id}}"<h1>{{title}}</h1></a>
+                <a href="/books/{{id}}"><h1>{{title}}</h1></a>
                 <h2>{{author}}</h2>
                 <p>{{isbn}}</p>
                 <p>{{description}}</p>
@@ -40,7 +40,7 @@
         <script src="scripts/model/book.js"></script>
         <script src="scripts/view/bookView.js"></script>
         <script src="scripts/routes.js"></script>
-        
+        <script>app.Book.fetchAll(app.bookView.initIndexPage); // this is here to so our pages load right away, will define in routes in the future</script>
        
     </body>
 </html>
