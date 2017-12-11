@@ -1,8 +1,8 @@
 'use strict';
 var app = app || {};
 
-// const API_URL = 'https://pure-cove-37929.herokuapp.com';
-const API_URL = 'http://localhost3000';
+const API_URL = 'https://pure-cove-37929.herokuapp.com';
+// const API_URL = 'http://localhost3000';
 
 (function(module) {
     function Book (obj) {
@@ -23,8 +23,12 @@ const API_URL = 'http://localhost3000';
     };
 
     Book.fetchAll = (cb) => {
+<<<<<<< 566cababb23dfd8584e58a9f5b1a2dc8e2c0141c
         $.get(`${API_URL}/api/v1/books`)
             .done(console.log) // how is this console logging the dataObj? Cause of the chain? Weird.
+=======
+        $.get('https://pure-cove-37929.herokuapp.com/api/v1/books')
+>>>>>>> removed console logs
             .then(Book.loadAll)
             .then(cb)
             .fail(console.error);
