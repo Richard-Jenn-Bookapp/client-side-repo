@@ -23,8 +23,12 @@ const API_URL = 'http://localhost3000';
     };
 
     Book.fetchAll = (cb) => {
+      gh-pages
+        $.get('https://pure-cove-37929.herokuapp.com/api/v1/books')
+
         $.get(`${API_URL}/api/v1/books`)
             .done(console.log) // how is this console logging the dataObj? Cause of the chain? Weird.
+         master
             .then(Book.loadAll)
             .then(cb)
             .fail(console.error);
