@@ -8,7 +8,11 @@ var app = app || {}; // eslint-disable-line
 
     bookView.initIndexPage = () => {
         $('main section').hide();
+   gh-pages
         $('#books').show();
+
+        $('#books').empty().show();
+    master
         module.Book.all.map(book => $('#books').append(book.toHtml()));
     };
     module.bookView = bookView;

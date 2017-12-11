@@ -1,6 +1,9 @@
 'use strict';
 var app = app || {};
 
+// const API_URL = 'https://pure-cove-37929.herokuapp.com';
+const API_URL = 'http://localhost3000';
+
 (function(module) {
     function Book (obj) {
         this.id = obj.id;
@@ -13,8 +16,19 @@ var app = app || {};
 
     Book.all = [];
 
+    Book.fetchOne = (cb) => {
+        $.get(`${API_URL}/api/v1/books/3`)
+            .then(console.log)
+            .fail(console.error);
+    };
+
     Book.fetchAll = (cb) => {
+      gh-pages
         $.get('https://pure-cove-37929.herokuapp.com/api/v1/books')
+
+        $.get(`${API_URL}/api/v1/books`)
+            .done(console.log) // how is this console logging the dataObj? Cause of the chain? Weird.
+         master
             .then(Book.loadAll)
             .then(cb)
             .fail(console.error);
