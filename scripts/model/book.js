@@ -24,16 +24,6 @@ const API_URL = 'https://pure-cove-37929.herokuapp.com';
 
     Book.fetchAll = (cb) => {
 
-
-        $.get(`${API_URL}/api/v1/books`)
-            .done(console.log); // how is this console logging the dataObj? Cause of the chain? Weird.
-
-        $.get('https://pure-cove-37929.herokuapp.com/api/v1/books');
-
-
-
-        $.get('https://pure-cove-37929.herokuapp.com/api/v1/books');
-
         $.get(`${API_URL}/api/v1/books`)
             .done(console.log) // how is this console logging the dataObj? Cause of the chain? Weird
 
