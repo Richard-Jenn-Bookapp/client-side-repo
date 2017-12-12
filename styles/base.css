@@ -1,0 +1,79 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Sans Pro', sans-serif;    
+}
+
+h1, h2, h3, h4 {
+    margin: 1.414em 0 0.5em;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.157em;
+    margin-bottom: .25em;
+}
+
+h2 {
+    font-size: 2.369em;
+    line-height: 1;
+    margin-top: .25em;
+    margin-bottom: .15em;
+}
+
+h3 {font-size: 1.777em;}
+  
+h4 {
+    font-size: 1.333em;
+    margin-top: 0;
+    margin-bottom: 1.5em;
+}  
+
+html {font-size: 1em;}
+
+nav {
+    background: #E3E3E3;
+    padding: 2.5% 7.5%;
+}
+
+body {
+    font-family: 'Libre Baskerville', serif;
+    line-height: 1.45em;
+    color: #383838;
+    margin: 0;
+}
+
+p {margin-bottom: 1.3em;}
+
+p.isbn {
+    font-size: .8em;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+a.book-link {
+    font-family: 'Source Sans Pro', sans-serif;        
+}
+
+a.book-link:link {color: #569fd5; text-decoration: none;}
+a.book-link:visited {color:#383838;}
+a.book-link:hover {color: #383838;}
+
+#book-listing {
+    margin: 10% 7.5%;
+}
+
+nav > ul {
+    list-style: none;     
+    font-family: 'Source Sans Pro', sans-serif;   
+    font-weight: bold;
+    padding-left: 0;    
+}
+
+li > a {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;    
+}
+
+li > a:link {color:#383838; text-decoration: none;}
+li > a:visited {color: #569fd5;}
+li > a:hover {color: #383838;}
