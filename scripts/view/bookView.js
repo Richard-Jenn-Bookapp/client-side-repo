@@ -39,7 +39,36 @@ var app = app || {}; // eslint-disable-line
         });
 
 
-        module.Book.all.map(book => $('#books').append(book.toHtml()));
+        module.Book.all.map(book => $('#books').append(book.toHtml())); // need this anymore?
     };
+
+    bookView.initUpdatePage = (ctx, cb) => {
+        console.log('ctx', ctx.book);
+        const book = ctx.book;
+        $('main section').hide();
+        $('#update-book').parent().show();
+
+        $('#update-book input[name="id"]').val(book.id);
+        $('#update-book input[name="author"]').val(book.author);
+        $('#update-book input[name="title"]').val(book.title);
+        $('#update-book input[name="isbn"]').val(book.isbn);
+        $('#update-book input[name="img_url"]').val(book.img_url);
+        $('#update-book input[name="description"]').val(book.description);
+
+        $('#update-book').on('submit', function () {
+            event.preventDefault();
+            const updatedData = {
+                id: $('#update-book input[name="id"]').val(),
+                author: $('#update-book input[name="author"]').val(),
+                title: $('#update-book input[name="title"]').val(),
+                isbn: $('#update-book input[name="isbn"]').val(),
+                img_url: $('#update-book input[name="img_url"]').val(),
+                description: $('#update-book input[name="description"]').val()
+            };
+
+            app.Book.update(book.id, updatedData);
+        });
+    };
+
     module.bookView = bookView;
 })(app);
