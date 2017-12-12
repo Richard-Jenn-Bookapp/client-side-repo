@@ -1,5 +1,5 @@
 'use strict';
-var app = app || {};
+var app = app || {}; // eslint-disable-line
 
 const API_URL = 'https://pure-cove-37929.herokuapp.com';
 // const API_URL = 'http://localhost3000';
@@ -16,43 +16,54 @@ const API_URL = 'https://pure-cove-37929.herokuapp.com';
 
     Book.all = [];
 
-    Book.fetchOne = (cb) => {
-        $.get(`${API_URL}/api/v1/books/3`)
+    Book.create = book => {
+        $.post(`${API_URL}/api/v1/books`, book)
             .then(console.log)
+            .catch(console.error);
+    };
+
+    Book.fetchOne = (ctx, cb) => {
+        $.get(`${API_URL}/api/v1/books/${ctx.params.id}`)
+            .then(data => {
+                ctx.book = new Book(data[0]);
+                cb();
+            })
             .fail(console.error);
     };
 
-    Book.fetchAll = (cb) => {
+    Book.fetchAll = (ctx, cb) => {
 
-        $.get(`${API_URL}/api/v1/books`)
-            .done(console.log) // how is this console logging the dataObj? Cause of the chain? Weird
+        $.get(`${API_URL}/api/v1/books/`)
+            .then(data => {
+                Book.loadAll(data);
+                ctx.books = Book.all;
+            })
 
-            .then(Book.loadAll)
+            // .then(Book.loadAll) // OLD
             .then(cb)
             .fail(console.error);
-
-
     };
 
     Book.loadAll = (data) => {
         Book.all = data.map(obj => new Book(obj));
     };
 
+
     Book.prototype.toHtml = function () {
         let fillTemplate = Handlebars.compile($('#book-template').text());
         return fillTemplate(this);
-
     };
+
 
     Book.loadAll = (data) => {
         Book.all = data.map(obj => new Book(obj));
     };
 
+
     Book.prototype.toHtml = function () {
         let fillTemplate = Handlebars.compile($('#book-template').text());
         return fillTemplate(this);
     };
-
 
     module.Book = Book;
 })(app);
