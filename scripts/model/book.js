@@ -1,8 +1,8 @@
 'use strict';
 var app = app || {}; // eslint-disable-line
 
-// const API_URL = 'https://pure-cove-37929.herokuapp.com';
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://pure-cove-37929.herokuapp.com';
+// const API_URL = 'http://localhost:3000';
 
 (function(module) {
     function Book (obj) {
