@@ -1,12 +1,16 @@
-page('/', (ctx, next) =>{
-    app.Book.fetchAll(app.bookView.initIndexPage);
-});
+page('/', app.Book.fetchAll, app.bookView.initIndexPage);
 
-page('/book:id', app.Book.fetchOne);
+page('/books', app.Book.fetchAll, app.bookView.initIndexPage);
 
-page('/about', app.bookView.initIndexPage);
+page('/book:id', app.Book.fetchOne, app.bookView.initDetailPage);
 
-page('*',(ctx, next) => { console.log('nothing to see here'); });
+page('/book:id/update', app.Book.fetchOne, app.bookView.initUpdatePage);
 
+page('/new', app.bookView.initNewPage);
 
+// page('/about', app.aboutView.initAboutPage); 
+
+page('*', (ctx, next) => { console.log('nothing to see here'); });
+
+page.base('/client-side-repo');
 page.start();

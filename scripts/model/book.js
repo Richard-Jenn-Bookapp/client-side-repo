@@ -1,8 +1,8 @@
 'use strict';
 var app = app || {}; // eslint-disable-line
 
-const API_URL = 'https://pure-cove-37929.herokuapp.com';
-// const API_URL = 'http://localhost3000';
+// const API_URL = 'https://pure-cove-37929.herokuapp.com';
+const API_URL = 'http://localhost:3000';
 
 (function(module) {
     function Book (obj) {
@@ -43,17 +43,6 @@ const API_URL = 'https://pure-cove-37929.herokuapp.com';
             .then(cb)
             .fail(console.error);
     };
-
-    Book.loadAll = (data) => {
-        Book.all = data.map(obj => new Book(obj));
-    };
-
-
-    Book.prototype.toHtml = function () {
-        let fillTemplate = Handlebars.compile($('#book-template').text());
-        return fillTemplate(this);
-    };
-
 
     Book.loadAll = (data) => {
         Book.all = data.map(obj => new Book(obj));
