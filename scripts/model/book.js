@@ -6,7 +6,7 @@ const API_URL = 'https://pure-cove-37929.herokuapp.com';
 
 (function(module) {
     function Book (obj) {
-        this.id = obj.id;
+        this.id = obj.book_id;
         this.author = obj.author;
         this.title = obj.title;
         this.isbn = obj.isbn;

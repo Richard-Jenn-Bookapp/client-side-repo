@@ -14,7 +14,7 @@
             <article>
                 <div id="book-listing">
                 <img src={{img_url}} alt="Book image">                        
-                <a class="book-link" href="/books/{{id}}"><h2>{{title}}</h2></a>
+                <a class="book-link" href="/client-side-repo/books/{{id}}"><h2>{{title}}</h2></a>
                 <h4 class="author">{{author}}</h4>
                 <p class="isbn">{{isbn}}</p>
                 <p>{{description}}</p>
@@ -26,26 +26,28 @@
         <nav>
             <ul>
                 <li><a href="/">Books</a></li>
-                <li><a href="./about" id="about">About</a></li>
-                <li><a href="./new" id="new">New</a></li>
+                <li><a href="/client-side-repo/about" id="about">About</a></li>
+                <li><a href="/client-side-repo/new" id="new">New</a></li>
             </ul>
         </nav>
         <main>
             <section id="books" class="tab-content">
             </section>
             <section>
-                <form id "new-book">
+                <form id="new-book">
                     <label for="id"> Id </label>
-                    <input type="number" name="id" value="">
+                    <input type="number" name="id" id="id" value="">
                     <label for="author"> Author </label>
-                    <input type="text" name="author" value="">
+                    <input type="text" name="author" id="author" value="">
                     <label for="title"> Title </label>
-                    <input type="text" name="title" value="">
+                    <input type="text" name="title" id="title" value="">
                     <label for="isbn"> Isbn </label>
-                    <input type="text" name="isbn" value="">
+                    <input type="text" name="isbn" id="isbn" value="">
                     <label for="img_url"> Image </label>
-                    <input type="file" name="image" value="">
-                    <label for="description"></label>
+                    <input type="text" name="image" id="image" value="">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" id="description" value="">                    
+                    <button type="submit">submit</button>                    
                 </form>
             </section>
  
