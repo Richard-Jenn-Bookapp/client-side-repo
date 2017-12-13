@@ -6,7 +6,7 @@ page('/books/:id/update', app.Book.fetchOne, app.bookView.initUpdatePage); // su
 
 page('/new', app.bookView.initNewPage);
 
-page('/about', app.aboutView.initAboutPage);
+// page('/about', app.aboutView.initAboutPage);
 
 page('*',(ctx, next) => { console.log('nothing to see here');
 });
