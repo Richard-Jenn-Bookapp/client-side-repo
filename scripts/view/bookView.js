@@ -37,8 +37,7 @@ var app = app || {}; // eslint-disable-line
 
             app.Book.create(newBook);
         });
-
-
+        
         module.Book.all.map(book => $('#books').append(book.toHtml())); // need this anymore?
     };
 
