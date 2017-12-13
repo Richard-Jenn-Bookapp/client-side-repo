@@ -30,15 +30,14 @@ var app = app || {}; // eslint-disable-line
                 author: this.author.value,
                 title: this.title.value,
                 isbn: this.isbn.value,
-                img_url: this.image_url.value, // re-visit?
+                img_url: this.image.value, // re-visit?
                 description: this.description.value
-
             };
 
             app.Book.create(newBook);
         });
 
-
+        module.bookView = bookView; // just added this
         module.Book.all.map(book => $('#books').append(book.toHtml())); // need this anymore?
     };
 
@@ -65,7 +64,6 @@ var app = app || {}; // eslint-disable-line
                 img_url: $('#update-book input[name="img_url"]').val(),
                 description: $('#update-book input[name="description"]').val()
             };
-
             app.Book.update(book.id, updatedData);
         });
     };
