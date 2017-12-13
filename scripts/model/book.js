@@ -6,7 +6,7 @@ const API_URL = 'http://localhost:3000';
 
 (function(module) {
     function Book (obj) {
-        this.id = obj.id;
+        this.id = obj.book_id;
         this.author = obj.author;
         this.title = obj.title;
         this.isbn = obj.isbn;
